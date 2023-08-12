@@ -7,6 +7,12 @@ public class User {
     private String secondName;
     private String patronymic;
     private LocalDate dateOfBirth;
+    /**
+     * Принцип инверсии зависимостей (DIP), зависимости внутри системы строятся на основе абстракций
+     */
+    /**
+     * Принцип единственной ответственности.
+     */
 
     public User(String firstName, String secondName){
         this.firstName = firstName;
@@ -50,7 +56,11 @@ public class User {
     public void setDateOfBirth(LocalDate dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
-
+    /**
+     * Принцип открытости/закрытости, здесь мы не вносим изменения в родительский класс, а просто
+     * переопределяем метод/ы
+     * Принцип подстановки Барбары Лисков (LSP), переопределили метод, не нарушив функциональность.
+     */
     @Override
     public String toString() {
         return "User{" +
